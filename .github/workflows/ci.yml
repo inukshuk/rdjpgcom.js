@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    environment: CI
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node:
+          - v17
+          - v18
+          - v19
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: npm clean-install
+
+      - name: Run tests
+        run: npm run coverage
