@@ -1,0 +1,29 @@
+{
+  "name": "rdjpgcom",
+  "version": "1.0.0",
+  "description": "Extracts text from JPEG COM markers",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inukshuk/rdjpgcom.js.git"
+  },
+  "keywords": [
+    "jpeg",
+    "jpg",
+    "jfif",
+    "com",
+    "comment"
+  ],
+  "author": "Sylvester Keil <sylvester@keil.or.at>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/inukshuk/rdjpgcom.js/issues"
+  },
+  "homepage": "https://github.com/inukshuk/rdjpgcom.js#readme"
+}
