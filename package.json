@@ -8,7 +8,7 @@
   },
   "scripts": {
     "coverage": "c8 --reporter=lcov --reporter=text-summary npm test",
-    "lint": "eslint src test",
+    "lint": "eslint lib test",
     "test": "mocha"
   },
   "repository": {
