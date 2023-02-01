@@ -7,7 +7,9 @@
     ".": "./lib/index.js"
   },
   "scripts": {
-    "test": "npm test"
+    "coverage": "c8 --reporter=lcov --reporter=text-summary npm test",
+    "lint": "eslint src test",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/inukshuk/rdjpgcom.js/issues"
   },
-  "homepage": "https://github.com/inukshuk/rdjpgcom.js#readme"
+  "homepage": "https://github.com/inukshuk/rdjpgcom.js#readme",
+  "devDependencies": {
+    "c8": "^7.12.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.33.0",
+    "mocha": "^10.2.0"
+  }
 }
