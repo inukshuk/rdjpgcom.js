@@ -9,6 +9,7 @@
   "scripts": {
     "coverage": "c8 --reporter=lcov --reporter=text-summary npm test",
     "lint": "eslint lib test",
+    "prepare": "rollup -c rollup.config.js",
     "pretest": "npm run lint",
     "test": "mocha"
   },
@@ -30,9 +31,11 @@
   },
   "homepage": "https://github.com/inukshuk/rdjpgcom.js#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
     "c8": "^7.12.0",
     "chai": "^4.3.7",
     "eslint": "^8.33.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "rollup": "^3.12.1"
   }
 }

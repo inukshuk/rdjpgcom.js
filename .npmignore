@@ -2,3 +2,4 @@ test
 .eslintrc.yml
 .github
 coverage
+rollup.config.js
