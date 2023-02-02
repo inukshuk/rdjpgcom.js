@@ -15,21 +15,28 @@ Installation
 Usage
 -----
     import { readFile } from 'node:fs/promises'
-    import rdjpgcom from 'rdjpgcom'
+    import { rdjpgcom } from 'rdjpgcom'
 
     let buffer = await readFile('image.jpg')
         
     // To read all valid UTF-8 comments:
-    rdjpgcom(buffer, { encoding: 'utf-8' })
+    let comments = rdjpgcom(buffer)
     
-    // To receive all comment segments including raw `payload` buffers:
-    rdjpgcom(buffer, { encoding: null })
+    // You can pass a different encoding as an option.
 
-Credits
--------
-    Copyright (c) 2023, Sylvester Keil
+    // To see all comment segments and their raw `payload` buffers use:
+    for (let segment of rdjpgcom(buffer, { encoding: null })) {
+      segment.payload
+    }
 
-This library is a derived work, inspired by `rdjpgcom.c` and
+Acknowledgements
+----------------
+This module is a derived work inspired by `rdjpgcom.c` and
 
     Copyright (C) 1994-1997, Thomas G. Lane.
     Modified 2009 by Bill Allombert, Guido Vollbeding
+
+License
+-------
+rdjpgcom.js is licensed under the terms of the BSD-2-Clause license.
+See the LICENSE file for details.

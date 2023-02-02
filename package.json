@@ -1,10 +1,14 @@
 {
   "name": "rdjpgcom",
   "version": "1.0.0",
-  "description": "Extracts text from JPEG COM markers",
+  "description": "Read text comments from JPEG files",
   "type": "module",
+  "main": "./dist/index.cjs",
   "exports": {
-    ".": "./lib/index.js"
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
   "scripts": {
     "coverage": "c8 --reporter=lcov --reporter=text-summary npm test",

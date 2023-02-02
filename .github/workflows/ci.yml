@@ -27,5 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm clean-install
 
+      - name: Compile CJS bundle
+        run: npm run prepare
+
+      - name: Test CJS package loading
+        run: node -e "assert(typeof require('.').rdjpgcom === 'function')"
+
       - name: Run tests
         run: npm run coverage
